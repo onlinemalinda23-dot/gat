@@ -39,7 +39,9 @@ body {
   position: fixed;
   top: 0; bottom: 0; left: 0;
   z-index: 20;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+.sidebar-overlay { display: none; }
 .brand {
   display: flex; align-items: center; gap: 10px;
   padding: 20px 18px;
@@ -241,6 +243,13 @@ textarea { min-height: 80px; resize: vertical; }
   .sidebar { transform: translateX(-100%); }
   .main { margin-left: 0; }
   .layout.sidebar-open .sidebar { transform: translateX(0); }
+  .sidebar-overlay {
+    display: block;
+    position: fixed; inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+    z-index: 15;
+    transition: opacity 0.3s;
+  }
   .burger { display: block; }
 }
 .pagination { display: flex; gap: 8px; align-items: center; justify-content: flex-end; }

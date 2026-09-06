@@ -6,7 +6,7 @@ import axios from 'axios';
  * at any cloud backend without code changes.
  */
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || '/api/v1',
+  baseURL: 'https://grandautotech.vercel.app/api/v1',
   headers: { 'Content-Type': 'application/json' },
 });
 

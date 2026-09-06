@@ -32,6 +32,7 @@ export default function Layout() {
 
   return (
     <div className={`layout ${open ? 'sidebar-open' : ''}`}>
+      {open && <div className="sidebar-overlay" onClick={() => setOpen(false)}></div>}
       <aside className="sidebar">
         <div className="brand">
           <img src="./logo.jpg" alt="Logo" className="brand-logo" style={{ width: 40, height: 40, objectFit: 'contain', borderRadius: 4 }} />
@@ -42,7 +43,7 @@ export default function Layout() {
         </div>
         <nav className="nav">
           {NAV.map(([to, label, icon]) => (
-            <NavLink key={to} to={to} className={({ isActive }) => (isActive ? 'active' : '')} end={to === '/'}>
+            <NavLink key={to} to={to} className={({ isActive }) => (isActive ? 'active' : '')} end={to === '/'} onClick={() => setOpen(false)}>
               <span>{icon}</span> {label}
             </NavLink>
           ))}
