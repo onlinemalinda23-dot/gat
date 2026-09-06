@@ -48,6 +48,9 @@ export default function Layout() {
             </NavLink>
           ))}
         </nav>
+        <div className="sidebar-footer">
+          <small>Software by: Pixel By Maliya<br/>0716 125 715</small>
+        </div>
       </aside>
 
       <div className="main">

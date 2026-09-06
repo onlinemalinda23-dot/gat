@@ -50,7 +50,8 @@ body {
 .brand-mark { font-size: 26px; }
 .brand strong { color: #fff; font-size: 17px; display: block; }
 .brand small { opacity: 0.7; }
-.nav { padding: 12px 10px; display: flex; flex-direction: column; gap: 2px; overflow-y: auto; }
+.nav { padding: 12px 10px; display: flex; flex-direction: column; gap: 2px; overflow-y: auto; flex: 1; }
+.sidebar-footer { padding: 16px; border-top: 1px solid rgba(255, 255, 255, 0.08); text-align: center; color: rgba(255,255,255,0.4); font-size: 11px; line-height: 1.5; }
 .nav a {
   color: var(--sidebar-text);
   text-decoration: none;
