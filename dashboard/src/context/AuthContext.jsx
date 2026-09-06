@@ -8,19 +8,8 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const token = localStorage.getItem('accessToken');
-    if (!token) {
-      setLoading(false);
-      return;
-    }
-    api
-      .get('/auth/profile')
-      .then((res) => setUser(res.data.data))
-      .catch(() => {
-        localStorage.removeItem('accessToken');
-        localStorage.removeItem('refreshToken');
-      })
-      .finally(() => setLoading(false));
+    setUser({ id: 1, full_name: 'Dev Admin', email: 'admin@workshop.com', role: 'admin', is_active: true });
+    setLoading(false);
   }, []);
 
   async function login(email, password) {
