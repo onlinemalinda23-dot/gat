@@ -91,7 +91,7 @@ export function Table({ columns, rows, empty = 'No records' }) {
           {rows.map((r, i) => (
             <tr key={r.id || i}>
               {columns.map((c, j) => (
-                <td key={j}>{c.render ? c.render(r) : r[c.key]}</td>
+                <td key={j} data-label={c.label}>{c.render ? c.render(r) : r[c.key]}</td>
               ))}
             </tr>
           ))}
