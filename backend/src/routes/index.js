@@ -12,6 +12,7 @@ const notificationRoutes = require('./notification.routes');
 const estimateRoutes = require('./estimate.routes');
 const appRoutes = require('./app.routes');
 const appointmentRoutes = require('./appointment.routes');
+const settingRoutes = require('./setting.routes');
 
 const router = Router();
 
@@ -28,5 +29,6 @@ router.use('/notifications', notificationRoutes);
 router.use('/estimates', estimateRoutes);
 router.use('/appointments', appointmentRoutes);
 router.use('/app', appRoutes);
+router.use('/settings', settingRoutes);
 
 module.exports = router;

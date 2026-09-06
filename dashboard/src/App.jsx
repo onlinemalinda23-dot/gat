@@ -18,6 +18,7 @@ import Notifications from './pages/Notifications';
 import Reports from './pages/Reports';
 import Users from './pages/Users';
 import Appointments from './pages/Appointments';
+import Settings from './pages/Settings';
 
 function RequireAuth({ children }) {
   const { user, loading } = useAuth();
@@ -57,6 +58,7 @@ export default function App() {
             <Route path="reports" element={<Reports />} />
             <Route path="users" element={<Users />} />
             <Route path="appointments" element={<Appointments />} />
+            <Route path="settings" element={<Settings />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>

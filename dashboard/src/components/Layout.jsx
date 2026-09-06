@@ -18,6 +18,7 @@ const NAV = [
   ['/notifications', 'Notifications', '🔔'],
   ['/reports', 'Reports', '📈'],
   ['/users', 'Employees', '👷'],
+  ['/settings', 'Settings', '⚙️'],
 ];
 
 export default function Layout() {

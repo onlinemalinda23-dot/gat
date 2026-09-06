@@ -28,9 +28,20 @@ async function sendSMS({ customerId, phone, message }) {
     [customerId, message]
   );
 
-  const token = process.env.TEXT_LK_API_TOKEN;
-  const senderId = process.env.TEXT_LK_SENDER_ID;
+  let token = process.env.TEXT_LK_API_TOKEN;
+  let senderId = process.env.TEXT_LK_SENDER_ID;
   let status = 'failed';
+
+  try {
+    const settingsResult = await query('SELECT setting_key, setting_value FROM settings WHERE setting_key IN ($1, $2)', ['text_lk_api_token', 'text_lk_sender_id']);
+    const settings = {};
+    for (const row of settingsResult.rows) settings[row.setting_key] = row.setting_value;
+    
+    if (settings.text_lk_api_token) token = settings.text_lk_api_token;
+    if (settings.text_lk_sender_id) senderId = settings.text_lk_sender_id;
+  } catch (err) {
+    console.warn('[SMS] Could not load settings from DB:', err.message);
+  }
 
   if (token && senderId && phone) {
     try {
