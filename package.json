@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "cd dashboard && npm install && npm run build && cd .. && rm -rf public && cp -r dashboard/dist public"
+    "build": "cd dashboard && npm install && npm run build && cd .. && rm -rf public && cp -r dashboard/dist public",
+    "start:backend": "cd backend && npm start",
+    "start:dashboard": "cd dashboard && npm run dev",
+    "dev": "npm run start:backend & npm run start:dashboard"
   },
   "engines": {
     "node": ">=18.0.0"
