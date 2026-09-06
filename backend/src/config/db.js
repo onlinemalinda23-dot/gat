@@ -40,6 +40,7 @@ function detectDriver() {
 function localDataDir() {
   const configured = process.env.SQLITE_PATH || '';
   if (configured === ':memory:') return ':memory:';
+  if (process.env.VERCEL) return ':memory:'; // Vercel filesystem is read-only
   return path.resolve(__dirname, '..', '..', configured || '.localdb');
 }
 
